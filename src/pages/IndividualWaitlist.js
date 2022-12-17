@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import DashLogo from "../assets/dash-logo.png";
-import FineBoy from "../assets/fineboy.png";
+import DashLogo from "../assets/Full-logo.png";
+import FineBoy from "../assets/fineboy1.png";
 import Select from "react-select";
 import { useState } from "react";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SubmissionSuccessful from "../components/SubmissionSuccessful";
 
 const IndividualWaitlist = () => {
   const genders = [
@@ -19,6 +20,7 @@ const IndividualWaitlist = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [stateOfResidence, setStateOfResidence] = useState("");
+  const [showSuccessfulModal, setShowSuccessfulModal] = useState(false)
 
   const userInfo = {
     fullName,
@@ -40,13 +42,19 @@ const IndividualWaitlist = () => {
   };
 
   const addToWaitlist = async (userinfo) => {
+    setShowSuccessfulModal(false)
     const res = axios.post(
       `https://sheet.best/api/sheets/f86a73c5-605b-478b-9810-4b9e67a4a835`,
       userinfo
     );
+    setShowSuccessfulModal(true)
 
-    alert("Submission Successful. Thank you for joining our waiting list");
-    console.log(res);
+    setTimeout(() => {
+      setShowSuccessfulModal(false)
+    }, 5000)
+
+    // alert("Submission Successful. Thank you for joining our waiting list");
+    // console.log(res);
 
     // setTasks([...tasks, data]);
   };
@@ -57,10 +65,11 @@ const IndividualWaitlist = () => {
   return (
     <div className="individual-waitlist pt-[19px]" data-aos="fade-in">
       <div className="flex items-center justify-between pr-[51px]">
-        <Link to="/">
-          <div className="rectangle bg-[#FFFFFF] w-1/6 flex justify-center items-center py-[7px] md:h-[75px] rounded-r-full md:max-w-[217px]">
-            <img className="w-[60%]" src={DashLogo} alt="logo" />
-          </div>
+        <Link
+          to="/"
+          className="rectangle bg-[#FFFFFF] w-1/6 flex justify-center items-center py-[7px] md:h-[75px] rounded-r-full md:max-w-[217px]"
+        >
+          <img className="w-[60%]" src={DashLogo} alt="logo" />
         </Link>
 
         <Link to="/">
@@ -70,8 +79,10 @@ const IndividualWaitlist = () => {
         </Link>
       </div>
 
+      <div>{showSuccessfulModal && <SubmissionSuccessful />}</div>
+
       <div className="lg:grid lg:grid-cols-2 place-items-center lg:mt-[-20px]">
-        <img src={FineBoy} alt="fineboy" className="mx-auto lg:w-[85%]" />
+        <img src={FineBoy} alt="fineboy" className="mx-auto lg:w-[80%]" />
 
         <div className="container px-[20px] md:px-[70px] lg:px-[0]  mt-[7px] m-auto">
           <h1 className="text-white font-[500] text-[32px] leading-[35.2px] md:text-center lg:text-left lg:text-[3rem] lg:leading-[70.4px]">

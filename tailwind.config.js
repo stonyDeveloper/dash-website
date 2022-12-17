@@ -8,7 +8,7 @@ module.exports = {
       
       // that is animation class
       animation: {
-        fade: 'fadeIn 2s ease-in-out',
+        fade: 'fadeIn 3s ease-in-out',
       },
 
       // that is actual animation

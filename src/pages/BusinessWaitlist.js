@@ -1,9 +1,10 @@
 import React from "react";
-import DashLogo from "../assets/dash-logo.png";
+import DashLogo from "../assets/Full-logo.png";
 import { Link } from "react-router-dom";
 import Bike from "../assets/bike-final.png";
 import Select from "react-select";
 import { useState } from "react";
+import SubmissionSuccessful from "../components/SubmissionSuccessful";
 
 const BusinessWaitlist = () => {
   const [businessName, setBusinessName] = useState('')
@@ -38,6 +39,10 @@ const BusinessWaitlist = () => {
             Go back
           </p>
         </Link>
+      </div>
+
+      <div>
+        <SubmissionSuccessful />
       </div>
 
       <div className="lg:grid lg:grid-cols-2 place-items-center lg:mt-[-20px]">
