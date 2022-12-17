@@ -8,6 +8,7 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SubmissionSuccessful from "../components/SubmissionSuccessful";
+import Loader from "../components/Loader";
 
 const IndividualWaitlist = () => {
   const genders = [
@@ -20,7 +21,8 @@ const IndividualWaitlist = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [stateOfResidence, setStateOfResidence] = useState("");
-  const [showSuccessfulModal, setShowSuccessfulModal] = useState(false)
+  const [showSuccessfulModal, setShowSuccessfulModal] = useState(false);
+  const [loading, setLoading]  = useState(false)
 
   const userInfo = {
     fullName,
@@ -42,11 +44,14 @@ const IndividualWaitlist = () => {
   };
 
   const addToWaitlist = async (userinfo) => {
+    setLoading(true)
     setShowSuccessfulModal(false)
-    const res = axios.post(
+    const res = await axios.post(
       `https://sheet.best/api/sheets/f86a73c5-605b-478b-9810-4b9e67a4a835`,
       userinfo
     );
+    console.log(res)
+    setLoading(false)
     setShowSuccessfulModal(true)
 
     setTimeout(() => {
@@ -63,7 +68,7 @@ const IndividualWaitlist = () => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
-    <div className="individual-waitlist pt-[19px]" data-aos="fade-in">
+    <div className="individual-waitlist pt-[19px] relative" data-aos="fade-in">
       <div className="flex items-center justify-between pr-[51px]">
         <Link
           to="/"
@@ -145,6 +150,8 @@ const IndividualWaitlist = () => {
             />
           </form>
         </div>
+
+        {loading && <Loader />}
       </div>
     </div>
   );
