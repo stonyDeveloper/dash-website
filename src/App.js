@@ -218,8 +218,8 @@ function App() {
                 </div>
               </div>
 
-              <div className="footer">
-                <div className="footer-box mx-[20px] bg-[#ABD1C6] rounded-[10px] flex flex-col justify-center items-center py-[48px] px-[35px] text-center">
+              <div className="footer relative">
+                <div className="footer-box mx-[20px] bg-[#ABD1C6] rounded-[10px] flex flex-col justify-center items-center py-[48px] px-[35px] text-center absolute top-[-50%]">
                   <h4 className="font-[600] text-[32px] text">
                     Built just for you, Join the team
                   </h4>
@@ -231,7 +231,7 @@ function App() {
                   </button>
                 </div>
 
-                <div className="footer-links flex mt-[53px] justify-center gap-[55px] pb-[65px]">
+                <div className="footer-links flex pt-[180px] justify-center gap-[55px] pb-[65px]">
                   <div className="flex flex-col gap-[16px]">
                     <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
                       Company
