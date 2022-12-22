@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import SubmissionSuccessful from "../components/SubmissionSuccessful";
 import Loader from "../components/Loader";
+import { Route, redirect } from 'react-router-dom'
 
 const IndividualWaitlist = () => {
   const genders = [
@@ -56,12 +57,20 @@ const IndividualWaitlist = () => {
 
     setTimeout(() => {
       setShowSuccessfulModal(false)
+      redirect('/')
+
     }, 5000)
+
+
+
+
+
 
     // alert("Submission Successful. Thank you for joining our waiting list");
     // console.log(res);
 
     // setTasks([...tasks, data]);
+
   };
 
   useEffect(() => {
@@ -69,7 +78,7 @@ const IndividualWaitlist = () => {
   }, []);
   return (
     <div className="individual-waitlist pt-[19px] relative" data-aos="fade-in">
-      <div className="flex items-center justify-between pr-[51px]">
+      <div className="flex items-center justify-between pr-[17px]">
         <Link
           to="/"
           className="rectangle bg-[#FFFFFF] w-1/6 flex justify-center items-center py-[7px] md:h-[75px] rounded-r-full md:max-w-[217px]"
@@ -123,17 +132,18 @@ const IndividualWaitlist = () => {
 
             <input
               className="w-full py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] md:w-[80%]"
-              type="text"
+              type="number"
               placeholder="Phone No"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <input
               className="w-full py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] md:w-[80%]"
-              type="text"
+              type="email"
               placeholder="Email Address"
               value={emailAddress}
               onChange={(e) => setEmailAddress(e.target.value)}
+              required
             />
             <input
               className="w-full md:w-[80%] py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px]"
