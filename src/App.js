@@ -234,7 +234,7 @@ function App() {
               </div>
 
               <div className="footer relative">
-                <div className="footer-box w-[319px] h-[250px]   bg-[#ABD1C6] rounded-[10px] flex flex-col justify-center items-center py-[48px] px-[35px] text-center m-auto mt-[-24%]">
+                <div className="footer-box w-[319px] h-[250px]   bg-[#ABD1C6] rounded-[10px] flex flex-col justify-center items-center py-[48px] px-[35px] text-center m-auto mt-[-29%]">
                   <h4 className="font-[600] text-[32px] text">
                     Built just for you. Join the team
                   </h4>
