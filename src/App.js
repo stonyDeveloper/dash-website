@@ -53,7 +53,12 @@ function App() {
                   <img className="w-[60%]" src={DashLogo} alt="logo" />
                 </div>
                 <div>
-                <Link className="font-[500] text-[18px] leading-[22.68px] text-[#ABD1C6]" to="/about_us">
+                <Link
+                onClick={() => {
+                  setShowDropdown(false)
+                  setFooterDropdown(false)
+                }}
+                 className="font-[500] text-[18px] leading-[22.68px] text-[#ABD1C6]" to="/about_us">
                 About Us</Link>
                 <button
                   className="hidden md:block bg-[#F9BC60]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"

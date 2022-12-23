@@ -118,7 +118,7 @@ const IndividualWaitlist = () => {
 
       <div>{showSuccessfulModal && <SubmissionSuccessful />}</div>
 
-      <div className="lg:grid lg:grid-cols-2 place-items-center lg:mt-[-20px]">
+      <div className="relative lg:grid lg:grid-cols-2 place-items-center lg:mt-[-20px]">
         <img src={FineBoy} alt="fineboy" className="mx-auto lg:w-[80%]" />
 
         <div className="container px-[20px] md:px-[70px] lg:px-[0]  mt-[7px] m-auto">
@@ -137,6 +137,7 @@ const IndividualWaitlist = () => {
               value={fullName}
               id="fullName"
               onChange={handleChange}
+              required
             />
             <select
               className="select py-[14px] px-[16px] rounded-[10px] text-[#001E1D] font-[500] text-[16px] leading-[20px] md:w-[80%]"
@@ -161,6 +162,7 @@ const IndividualWaitlist = () => {
               id="phoneNumber"
               value={phoneNumber}
               onChange={handleChange}
+              required
             />
             <input
               className="w-full py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] md:w-[80%]"
@@ -178,6 +180,7 @@ const IndividualWaitlist = () => {
               id="stateOfResidence"
               value={stateOfResidence}
               onChange={handleChange}
+              required
             />
 
             <input
