@@ -52,13 +52,12 @@ const IndividualWaitlist = () => {
       `https://sheet.best/api/sheets/f86a73c5-605b-478b-9810-4b9e67a4a835`,
       userinfo
     );
-    console.log(res)
+    // console.log(res)
     setLoading(false)
     setShowSuccessfulModal(true)
 
     setTimeout(() => {
       setShowSuccessfulModal(false)
-      redirect('/')
     }, 5000)
 
 
