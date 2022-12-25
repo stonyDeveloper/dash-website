@@ -12,7 +12,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
   return (
     <>
       <div className="bg-[#FFFFFF] relative">
-        <div className="pt-[26px] flex items-center justify-between pr-[52px]">
+        <div className="pt-[26px] flex items-center justify-between pr-[30px]">
           <Link
             to="/"
             className="rectangle bg-[#FFFFFF] md:w-1/6 flex justify-center items-center py-[7px] h-[48px] w-[120px] md:h-[75px] rounded-r-full md:max-w-[217px]"
@@ -112,44 +112,50 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
 
       <div className="blank bg-white h-[249px]"></div>
 
-      <div className="footer relative">
+      <div className="footer">
         <div className="footer-box text-center md:text-left w-[319px] h-[250px] md:w-[886px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between mt-[-130px] md:pl-[68.5px] md:pr-[50.5px]">
-          <h1 className="font-[600] text-[32px] text-[#001E1D]">Built Just For You. <br /> Join The Team</h1>
-          <button
-            className="bg-[#F9BC60] mt-[25px]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
-            onClick={toggleFooterDropdown}
-          >
-            <span className="mr-[16px] cursor-pointer">Join the waitlist</span>
-            {!footerDropdown && <i class="fa fa-angle-down animate-fade"></i>}
-            {footerDropdown && <i class="fa fa-angle-up animate-fade"></i>}
-          </button>
-          {footerDropdown && (
-                    <div className="absolute top-[52%] left-[23%]">
-                      <WaitlistDropdown toggleDropdown={toggleFooterDropdown} />
-                    </div>
-                  )}
+          <h1 className="font-[600] text-[32px] text-[#001E1D]">
+            Built Just For You. <br /> Join The Team
+          </h1>
+          <div className="relative">
+            <button
+              className="bg-[#F9BC60] mt-[25px]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
+              onClick={toggleFooterDropdown}
+            >
+              <span className="mr-[16px] cursor-pointer">
+                Join the waitlist
+              </span>
+              {!footerDropdown && <i class="fa fa-angle-down animate-fade"></i>}
+              {footerDropdown && <i class="fa fa-angle-up animate-fade"></i>}
+            </button>
+            {footerDropdown && (
+              <div className="absolute top-[105%] left-[0]">
+                <WaitlistDropdown toggleDropdown={toggleFooterDropdown} />
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="footer-links flex pt-[53px] justify-center gap-[55px] pb-[65px]">
-                  <div className="flex flex-col gap-[16px]">
-                    <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
-                      Company
-                    </p>
-                    <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
-                      About us
-                    </p>
-                  </div>
+          <div className="flex flex-col gap-[16px]">
+            <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
+              Company
+            </p>
+            <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
+              About us
+            </p>
+          </div>
 
-                  <div className="flex flex-col gap-[16px]">
-                    <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
-                      Connect with us
-                    </p>
-                    <div className="flex gap-[10px]">
-                      <img src={InstagramIcon} alt="instagramIcon" />
-                      <img src={TwitterIcon} alt="twitterIcon" />
-                    </div>
-                  </div>
-                </div>
+          <div className="flex flex-col gap-[16px]">
+            <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
+              Connect with us
+            </p>
+            <div className="flex gap-[10px]">
+              <img src={InstagramIcon} alt="instagramIcon" />
+              <img src={TwitterIcon} alt="twitterIcon" />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

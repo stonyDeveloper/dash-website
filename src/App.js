@@ -47,7 +47,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="App bg-[url('./assets/background-img.png')] bg-no-repeat  pt-[19px]">
+            <div className="App bg-[url('./assets/background-img.png')] bg-auto  pt-[19px]">
               <div className="flex items-center pr-[20px] md:flex md:items-center justify-between md:pr-[30px]">
                 <div className="rectangle bg-[#FFFFFF] md:w-1/6 flex justify-center items-center py-[7px] h-[48px] w-[120px] md:h-[75px] rounded-r-full md:max-w-[217px]">
                   <img className="w-[60%]" src={DashLogo} alt="logo" />
