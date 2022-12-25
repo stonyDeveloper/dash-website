@@ -113,7 +113,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
       <div className="blank bg-white h-[249px]"></div>
 
       <div className="footer relative">
-        <div className="footer-box text-center w-[319px] h-[250px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col items-center justify-center mt-[-130px]">
+        <div className="footer-box text-center md:text-left w-[319px] h-[250px] md:w-[886px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between mt-[-130px] md:pl-[68.5px] md:pr-[50.5px]">
           <h1 className="font-[600] text-[32px] text-[#001E1D]">Built Just For You. <br /> Join The Team</h1>
           <button
             className="bg-[#F9BC60] mt-[25px]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
