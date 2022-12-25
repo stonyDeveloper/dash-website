@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DashLogo from "../assets/Full-logo.png";
 import FineBoy from "../assets/fineboy1.png";
 import Select from "react-select";
@@ -11,7 +11,7 @@ import SubmissionSuccessful from "../components/SubmissionSuccessful";
 import Loader from "../components/Loader";
 import { Route, redirect } from 'react-router-dom'
 
-const IndividualWaitlist = () => {
+const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
   const genders = [
     { value: "male", label: "Male" },
     { value: "female", label: "Female" },
@@ -45,6 +45,8 @@ const IndividualWaitlist = () => {
     // console.log(userInfo)
   };
 
+  const navigate = useNavigate()
+
   const addToWaitlist = async (userinfo) => {
     setLoading(true)
     setShowSuccessfulModal(false)
@@ -57,8 +59,10 @@ const IndividualWaitlist = () => {
     setShowSuccessfulModal(true)
 
     setTimeout(() => {
-      setShowSuccessfulModal(false)
-    }, 5000)
+      // setShowSuccessfulModal(false)
+      navigate("/")
+    }, 3000)
+
 
 
 
@@ -95,6 +99,7 @@ const IndividualWaitlist = () => {
 
   }
 
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
@@ -102,20 +107,20 @@ const IndividualWaitlist = () => {
     <div className="individual-waitlist pt-[19px] pb-[47px] relative" data-aos="fade-in">
       <div className="flex items-center justify-between pr-[17px]">
         <Link
-          to="/"
+          
           className="rectangle bg-[#FFFFFF] md:w-1/6 flex justify-center items-center py-[7px] md:h-[75px] h-[48px] w-[120px] rounded-r-full md:max-w-[217px]"
         >
           <img className="w-[60%]" src={DashLogo} alt="logo" />
         </Link>
 
-        <Link to="/">
-          <p className="text-[#F9BC60] font-[400] text-[16px] leading-[20.16px] md:text-[20px] md:leading-[25.2px] underline pr-[16px] cursor-pointer">
+        
+          <p onClick={() => navigate(-1)} className="text-[#F9BC60] font-[400] text-[16px] leading-[20.16px] md:text-[20px] md:leading-[25.2px] underline pr-[16px] cursor-pointer">
             Go back
           </p>
-        </Link>
+        
       </div>
 
-      <div>{showSuccessfulModal && <SubmissionSuccessful />}</div>
+      <div className="flex justify-center">{showSuccessfulModal && <SubmissionSuccessful />}</div>
 
       <div className="relative lg:grid lg:grid-cols-2 place-items-center lg:mt-[-20px]">
         <img src={FineBoy} alt="fineboy" className="mx-auto lg:w-[80%]" />
@@ -185,7 +190,7 @@ const IndividualWaitlist = () => {
             <input
               type="submit"
               value="Submit"
-              className={`font-[500] md:w-[80%] text-[20px] leading-[25px] py-[13px] rounded-[10px] mt-[20px] ${buttonDisabled ? 'bg-[#9D9485]' : 'bg-[#F9BC60]'}`}
+              className={`font-[500] md:w-[80%] text-[20px] leading-[25px] py-[13px] rounded-[10px] cursor-pointer mt-[20px] ${buttonDisabled ? 'bg-[#9D9485]' : 'bg-[#F9BC60]'}`}
               disabled={buttonDisabled}
             />
           </form>

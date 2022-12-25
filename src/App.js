@@ -288,8 +288,8 @@ function App() {
             </div>
           }
         />
-        <Route path="/individual_waitlist" element={<IndividualWaitlist />} />
-        <Route path="/business_waitlist" element={<BusinessWaitlist />} />
+        <Route path="/individual_waitlist" element={<IndividualWaitlist setFooterDropdown={setFooterDropdown} setShowDropdown={setShowDropdown} />} />
+        <Route path="/business_waitlist" element={<BusinessWaitlist  setFooterDropdown={setFooterDropdown} setShowDropdown={setShowDropdown}/>} />
         <Route 
         path="/about_us" 
         element={

@@ -1,18 +1,18 @@
 import React from "react";
 import DashLogo from "../assets/Full-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Bike from "../assets/bike-final.png";
 import Select from "react-select";
 import { useState } from "react";
 import SubmissionSuccessful from "../components/SubmissionSuccessful";
 
-const BusinessWaitlist = () => {
-  const [businessName, setBusinessName] = useState('')
-  const [businessEmail, setBusinessEmail] = useState('')
-  const [businessPhoneNumber, setBusinessPhoneNumber] = useState('')
-  const [businessSector, setBusinessSector] = useState('')
-  const [bikeNumber, setBikeNumber] = useState('')
-  const [location, setLocation] = useState('')
+const BusinessWaitlist = ({setShowDropdown, setFooterDropdown}) => {
+  const [businessName, setBusinessName] = useState("");
+  const [businessEmail, setBusinessEmail] = useState("");
+  const [businessPhoneNumber, setBusinessPhoneNumber] = useState("");
+  const [businessSector, setBusinessSector] = useState("");
+  const [bikeNumber, setBikeNumber] = useState("");
+  const [location, setLocation] = useState("");
 
   const businessInfo = {
     businessName,
@@ -20,13 +20,15 @@ const BusinessWaitlist = () => {
     businessPhoneNumber,
     businessSector,
     bikeNumber,
-    location
-  }
+    location,
+  };
 
   const onSubmit = (e) => {
-    e.preventDefault()
-    console.log(businessInfo)
-  }
+    e.preventDefault();
+    console.log(businessInfo);
+  };
+
+  const navigate = useNavigate();
 
   return (
     <div className="pt-[19px]">
@@ -34,11 +36,15 @@ const BusinessWaitlist = () => {
         <div className="rectangle bg-[#FFFFFF] w-1/6 flex justify-center items-center py-[7px] md:h-[75px] rounded-r-full md:max-w-[217px]">
           <img className="w-[60%]" src={DashLogo} alt="logo" />
         </div>
-        <Link to="/">
-          <p className="text-[#F9BC60] font-[400] text-[16px] leading-[20.16px] md:text-[20px] md:leading-[25.2px] underline pr-[16px] cursor-pointer">
-            Go back
-          </p>
-        </Link>
+
+        <p
+          onClick={() => {
+            navigate(-1)
+          }}
+          className="text-[#F9BC60] font-[400] text-[16px] leading-[20.16px] md:text-[20px] md:leading-[25.2px] underline pr-[16px] cursor-pointer"
+        >
+          Go back
+        </p>
       </div>
 
       <div>
@@ -53,7 +59,10 @@ const BusinessWaitlist = () => {
             Be the first to know <br /> when we launch
           </h1>
 
-          <form className="input-fields mt-[40px] grid gap-[6px] md:gap-[12px] md:flex md:flex-col md:justify-center md:items-center lg:items-start" onSubmit={onSubmit}>
+          <form
+            className="input-fields mt-[40px] grid gap-[6px] md:gap-[12px] md:flex md:flex-col md:justify-center md:items-center lg:items-start"
+            onSubmit={onSubmit}
+          >
             <input
               className="w-full md:w-[80%] py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px]"
               type="text"

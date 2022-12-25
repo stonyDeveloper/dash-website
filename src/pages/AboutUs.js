@@ -39,6 +39,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
             <WaitlistDropdown
               mdTop="md:top-[100px]"
               mdRight="md:right-[50px]"
+              toggleDropdown={toggleDropdown}
             />
           )}
         </div>
@@ -55,10 +56,10 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
       <div className="md:hidden">
         <img className="w-full" src={AboutImage} alt="packagedelivery" />
       </div>
-      <div className="cards bg-white pt-[161px] hidden md:flex px-[50px] gap-[22px]">
+      <div className="cards bg-white pt-[161px] hidden xl:flex px-[50px] gap-[22px]">
         <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[450px]">
           <img className="w-[69px]" src={TextLogo} alt="" />
-          <p className="font-[400] text-[24px] leading-[33.6px] text-[#FFFFFE] mt-[22px]">
+          <p className="font-[400] text-[24px]  leading-[33.6px] text-[#FFFFFE] mt-[22px]">
             Daash is an on-demand aggregator company that aggregates logistics
             partners and their assets (Dispatch bikes) with senders (End users)
             into a single platform where they can transact business.{" "}
@@ -66,7 +67,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
         </div>
         <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[450px]">
           <img className="w-[69px]" src={TextLogo} alt="" />
-          <p className="font-[400] text-[24px] leading-[33.6px] text-[#FFFFFE] mt-[22px]">
+          <p className="font-[400] text-[24px]  leading-[33.6px] text-[#FFFFFE] mt-[22px]">
             More specifically, Daash is a transportation logistics company and
             technology provider with a mobile app that allows senders (End
             users) to request for a delivery and dispatch riders to charge fares
@@ -82,7 +83,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
           </p>
         </div>
       </div>
-      <div className="about-us-texts pt-[33px] px-[21px] text-left text-[#FFFFFE] pb-[30px] md:hidden">
+      <div className="about-us-texts pt-[33px] px-[21px] text-left text-[#FFFFFE] pb-[30px] xl:hidden">
         <div className="flex flex-col gap-[18px]">
           <img className="w-[69px] h-[48px]" src={TextLogo} alt="icon" />
           <p className="font-[400] text-[20px] leading-[28px]">
@@ -113,7 +114,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
       <div className="blank bg-white h-[249px]"></div>
 
       <div className="footer">
-        <div className="footer-box text-center md:text-left w-[319px] h-[250px] md:w-[886px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between mt-[-130px] md:pl-[68.5px] md:pr-[50.5px]">
+        <div className="footer-box text-center md:text-left w-[319px] h-[250px] md:w-[700px] lg:w-[886px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between mt-[-130px] md:pl-[68.5px] md:pr-[50.5px]">
           <h1 className="font-[600] text-[32px] text-[#001E1D]">
             Built Just For You. <br /> Join The Team
           </h1>

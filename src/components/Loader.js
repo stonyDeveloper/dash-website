@@ -2,17 +2,8 @@ import React from 'react'
 
 const Loader = () => {
   return (
-    <div class="center absolute top-[0px] w-[100%] h-full">
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
+    <div className="loading w-[100vw] h-[130vh] md:h-[110vh] absolute top-[-80px] flex justify-center items-center">
+    <span className="loader"></span>
     </div>
     
   );
