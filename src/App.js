@@ -52,7 +52,7 @@ function App() {
                 <div className="rectangle bg-[#FFFFFF] md:w-1/6 flex justify-center items-center py-[7px] h-[48px] w-[120px] md:h-[75px] rounded-r-full md:max-w-[217px]">
                   <img className="w-[60%]" src={DashLogo} alt="logo" />
                 </div>
-                <div>
+                <div className="flex items-center gap-[46px]">
                 <Link
                 onClick={() => {
                   setShowDropdown(false)
@@ -102,7 +102,7 @@ function App() {
                 </div>
 
                 {showDropdown && (
-                  <WaitlistDropdown toggleDropdown={toggleDropdown} />
+                  <WaitlistDropdown toggleDropdown={toggleDropdown} mdTop="md:top-[-50px]" mdRight="md:right-[26px]" />
                 )}
 
                 <div className="hero-img mt-[30px] w-full">
@@ -290,7 +290,16 @@ function App() {
         />
         <Route path="/individual_waitlist" element={<IndividualWaitlist />} />
         <Route path="/business_waitlist" element={<BusinessWaitlist />} />
-        <Route path="/about_us" element={<AboutUs />} />
+        <Route 
+        path="/about_us" 
+        element={
+        <AboutUs 
+          showDropdown={showDropdown} 
+          setShowDropdown={setShowDropdown}
+          toggleDropdown={toggleDropdown}
+          footerDropdown={footerDropdown}
+          toggleFooterDropdown={toggleFooterDropdown}
+        />} />
       </Routes>
     </Router>
   );

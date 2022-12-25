@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-const WaitlistDropdown = ({toggleDropdown }) => {
+const WaitlistDropdown = ({toggleDropdown, mdTop, mdRight }) => {
   const closeDropDown = () => {
       
   }
@@ -17,7 +17,7 @@ const WaitlistDropdown = ({toggleDropdown }) => {
         <div
           data-aos="fade-down"
           data-aos-duration="200"
-          className="w-[215px] h-[119px] rounded-[5px] bg-[#FFFFFF] px-[16px] py-[13px] absolute top-[46.5%] md:top-[-50px] md:right-[26px] z-50"
+          className={`w-[215px] h-[119px] rounded-[5px] bg-[#FFFFFF] px-[16px] py-[13px] absolute top-[46.5%] ${mdTop} ${mdRight} z-50`}
           
         >
           <Link to="/individual_waitlist">
