@@ -107,7 +107,7 @@ const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
     <div className="individual-waitlist pt-[19px] pb-[47px] relative" data-aos="fade-in">
       <div className="flex items-center justify-between pr-[17px]">
         <Link
-          
+          to="/"
           className="rectangle bg-[#FFFFFF] md:w-1/6 flex justify-center items-center py-[7px] md:h-[75px] h-[48px] w-[120px] rounded-r-full md:max-w-[217px]"
         >
           <img className="w-[60%]" src={DashLogo} alt="logo" />
