@@ -9,22 +9,24 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import SubmissionSuccessful from "../components/SubmissionSuccessful";
 import Loader from "../components/Loader";
-import { Route, redirect } from 'react-router-dom'
+import { Route, redirect } from "react-router-dom";
+import InputFieldDropdown from "../components/InputFieldDropdown";
 
-const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
+const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
   const genders = [
     { value: "male", label: "Male" },
     { value: "female", label: "Female" },
   ];
 
   const [fullName, setFullName] = useState("");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("Gender");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [stateOfResidence, setStateOfResidence] = useState("");
   const [showSuccessfulModal, setShowSuccessfulModal] = useState(false);
-  const [loading, setLoading]  = useState(false)
+  const [loading, setLoading] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [genderDropdown, setGenderDropdown] = useState(false);
 
   const userInfo = {
     fullName,
@@ -45,66 +47,70 @@ const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
     // console.log(userInfo)
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const addToWaitlist = async (userinfo) => {
-    setLoading(true)
-    setShowSuccessfulModal(false)
+    setLoading(true);
+    setShowSuccessfulModal(false);
     const res = await axios.post(
       `https://sheet.best/api/sheets/f86a73c5-605b-478b-9810-4b9e67a4a835`,
       userinfo
     );
     // console.log(res)
-    setLoading(false)
-    setShowSuccessfulModal(true)
+    setLoading(false);
+    setShowSuccessfulModal(true);
 
     setTimeout(() => {
       // setShowSuccessfulModal(false)
-      navigate("/")
-    }, 3000)
-
-
-
-
-
-
+      navigate("/");
+    }, 3000);
 
     // alert("Submission Successful. Thank you for joining our waiting list");
     // console.log(res);
 
     // setTasks([...tasks, data]);
-
   };
 
   const handleChange = (e) => {
-    if(e.target.id === 'fullName'){
-      setFullName(e.target.value)
-    }else if(e.target.id === 'gender'){
-      setGender(e.target.value)
-    }else if(e.target.id === 'phoneNumber'){
-      setPhoneNumber(e.target.value)
-    }else if(e.target.id === 'stateOfResidence'){
-      setStateOfResidence(e.target.value)
-    }else if(e.target.id === 'emailAddress'){
-      setEmailAddress(e.target.value)
+    if (e.target.id === "fullName") {
+      setFullName(e.target.value);
+    } else if (e.target.id === "gender") {
+      setGender(e.target.value);
+    } else if (e.target.id === "phoneNumber") {
+      setPhoneNumber(e.target.value);
+    } else if (e.target.id === "stateOfResidence") {
+      setStateOfResidence(e.target.value);
+    } else if (e.target.id === "emailAddress") {
+      setEmailAddress(e.target.value);
     }
 
-    if(fullName && gender && phoneNumber && emailAddress && stateOfResidence){
-      setButtonDisabled(false)
+    if (
+      fullName &&
+      gender !== "Gender" &&
+      phoneNumber &&
+      emailAddress &&
+      stateOfResidence
+    ) {
+      setButtonDisabled(false);
     } else {
-      setButtonDisabled(true)
+      setButtonDisabled(true);
     }
 
-    console.log(userInfo)
+    console.log(userInfo);
+  };
 
-  }
-
+  const toggleGenderDropdown = () => {
+    setGenderDropdown((prevGenderDropdown) => !prevGenderDropdown);
+  };
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
-    <div className="individual-waitlist pt-[19px] pb-[47px] relative" data-aos="fade-in">
+    <div
+      className="individual-waitlist pt-[19px] pb-[47px] relative"
+      data-aos="fade-in"
+    >
       <div className="flex items-center justify-between pr-[17px]">
         <Link
           to="/"
@@ -113,14 +119,17 @@ const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
           <img className="w-[60%]" src={DashLogo} alt="logo" />
         </Link>
 
-        
-          <p onClick={() => navigate(-1)} className="text-[#F9BC60] font-[400] text-[16px] leading-[20.16px] md:text-[20px] md:leading-[25.2px] underline pr-[16px] cursor-pointer">
-            Go back
-          </p>
-        
+        <p
+          onClick={() => navigate(-1)}
+          className="text-[#F9BC60] font-[400] text-[16px] leading-[20.16px] md:text-[20px] md:leading-[25.2px] underline pr-[16px] cursor-pointer"
+        >
+          Go back
+        </p>
       </div>
 
-      <div className="flex justify-center">{showSuccessfulModal && <SubmissionSuccessful />}</div>
+      <div className="flex justify-center">
+        {showSuccessfulModal && <SubmissionSuccessful />}
+      </div>
 
       <div className="relative lg:grid lg:grid-cols-2 place-items-center lg:mt-[-20px]">
         <img src={FineBoy} alt="fineboy" className="mx-auto lg:w-[80%]" />
@@ -143,7 +152,7 @@ const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
               onChange={handleChange}
               required
             />
-            <select
+            {/* <select
               className="select py-[14px] px-[16px] rounded-[10px] text-[#001E1D] min-h-[50px] font-[500] text-[16px] leading-[20px] md:w-[80%]"
               name="gender"
               id="gender"
@@ -157,7 +166,21 @@ const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
                 Male
               </option>
               <option value="female">Female</option>
-            </select>
+            </select> */}
+            <div className="relative md:w-[80%] w-full">
+              <div
+                onClick={toggleGenderDropdown}
+                className={`w-full  py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] bg-white ${gender == "Gender" ? "text-[#9BA3AF]" : "text-black" } flex items-center justify-between`}
+              >
+                <p>{gender}</p>
+                <i class="fa fa-angle-down"></i>
+              </div>
+              {genderDropdown && (
+                <div className="absolute top-[60px] w-full">
+                  <InputFieldDropdown dropdownList={["Male", "Female"]} setGender={setGender} gender={gender} toggleGenderDropdown={toggleGenderDropdown} />
+                </div>
+              )}
+            </div>
 
             <input
               className="w-full py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] md:w-[80%]"
@@ -190,7 +213,9 @@ const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
             <input
               type="submit"
               value="Submit"
-              className={`font-[500] md:w-[80%] text-[20px] leading-[25px] py-[13px] rounded-[10px] cursor-pointer mt-[20px] ${buttonDisabled ? 'bg-[#9D9485]' : 'bg-[#F9BC60]'}`}
+              className={`font-[500] md:w-[80%] text-[20px] leading-[25px] py-[13px] rounded-[10px] cursor-pointer mt-[20px] ${
+                buttonDisabled ? "bg-[#9D9485]" : "bg-[#F9BC60]"
+              }`}
               disabled={buttonDisabled}
             />
           </form>
