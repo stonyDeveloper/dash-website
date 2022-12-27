@@ -224,7 +224,7 @@ function App() {
               </div>
 
               <div className="guarantee bg-[#FFFFFE] pt-[94px] px-[20px] pb-[238px] flex flex-col-reverse gap-[31px] justify-center lg:items-center lg:space-x-[89px] text-center lg:flex-row lg:text-left">
-                <div className="guarantee-image">
+                <div className="guarantee-image mt-[31px]">
                   <img
                     className="mx-auto md:w-[70%] lg:w-[659px]"
                     src={GuaranteeImage}
