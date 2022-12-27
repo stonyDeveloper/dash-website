@@ -20,7 +20,7 @@ div.service-cards > *{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.individual-waitlist{
+.individual-waitlist, .business-waitlist{
   background-image: url('./assets/background-img.png');
 }
 

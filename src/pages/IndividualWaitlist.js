@@ -58,6 +58,7 @@ const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
     );
     // console.log(res)
     setLoading(false);
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     setShowSuccessfulModal(true);
 
     setTimeout(() => {
@@ -176,7 +177,7 @@ const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
                 <i class="fa fa-angle-down"></i>
               </div>
               {genderDropdown && (
-                <div className="absolute top-[60px] w-full">
+                <div className="absolute top-[55px] w-[101%]">
                   <InputFieldDropdown dropdownList={["Male", "Female"]} setGender={setGender} gender={gender} toggleGenderDropdown={toggleGenderDropdown} />
                 </div>
               )}

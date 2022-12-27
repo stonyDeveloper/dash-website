@@ -37,6 +37,23 @@ function App() {
     setFooterDropdown((prevFooterDropdown) => !prevFooterDropdown);
   };
 
+  const closeHeroDropDown = () => {
+    if(showDropdown == true){
+      setShowDropdown(false)
+    }
+  }
+
+  const closeFooterDropdown = () => {
+    if(footerDropdown == true){
+      setFooterDropdown(false)
+    }
+  }
+
+  const closeDropdowns = () => {
+    closeHeroDropDown()
+    closeFooterDropdown()
+  }
+
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
@@ -47,7 +64,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="App bg-[url('./assets/background-img.png')] bg-auto  pt-[19px]">
+            <div onClick={closeDropdowns} className="App bg-[url('./assets/background-img.png')] bg-auto  pt-[19px]">
               <div className="flex items-center pr-[20px] md:flex md:items-center justify-between md:pr-[30px]">
                 <div className="rectangle bg-[#FFFFFF] md:w-1/6 flex justify-center items-center py-[7px] h-[48px] w-[120px] md:h-[75px] rounded-r-full md:max-w-[217px]">
                   <img className="w-[60%]" src={DashLogo} alt="logo" />
@@ -258,7 +275,7 @@ function App() {
                     )}
                   </button>
                   {footerDropdown && (
-                    <div className="absolute top-[53%] left-[22.5%]">
+                    <div className="absolute top-[53%] left-[24%]">
                       <WaitlistDropdown toggleDropdown={toggleFooterDropdown} />
                     </div>
                   )}

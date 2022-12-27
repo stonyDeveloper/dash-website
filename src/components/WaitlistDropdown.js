@@ -17,7 +17,7 @@ const WaitlistDropdown = ({toggleDropdown, mdTop, mdRight }) => {
         <div
           data-aos="fade-down"
           data-aos-duration="200"
-          className={`w-[215px] h-[119px] rounded-[5px] bg-[#FFFFFF] px-[16px] py-[13px] absolute top-[46.5%] ${mdTop} ${mdRight} z-50`}
+          className={`w-[215px] h-[119px] rounded-[5px] bg-[#FFFFFF] px-[16px] py-[13px] absolute top-[45.5%] ${mdTop} ${mdRight} z-50`}
           
         >
           <Link to="/individual_waitlist">
