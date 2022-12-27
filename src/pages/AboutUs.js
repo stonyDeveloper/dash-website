@@ -8,9 +8,26 @@ import WaitlistDropdown from "../components/WaitlistDropdown";
 import InstagramIcon from "../assets/instagramIcon.png";
 import TwitterIcon from "../assets/twitterIcon.png";
 
-const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown, toggleFooterDropdown }) => {
+const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown, toggleFooterDropdown, setFooterDropdown }) => {
+  const closeNavDropdown = () => {
+    if (showDropdown == true){
+      setShowDropdown(false)
+    }
+  }
+
+  const closeFooterDropdown = () => {
+    if (footerDropdown == true){
+      setFooterDropdown(false)
+    }
+  }
+
+  const closeDropdowns = () => {
+    closeNavDropdown()
+    closeFooterDropdown()
+  }
   return (
     <>
+    <div onClick={closeDropdowns}>
       <div className="bg-[#FFFFFF] relative">
         <div className="pt-[26px] flex items-center justify-between pr-[30px]">
           <Link
@@ -157,6 +174,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

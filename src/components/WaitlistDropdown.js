@@ -17,13 +17,13 @@ const WaitlistDropdown = ({toggleDropdown, mdTop, mdRight }) => {
         <div
           data-aos="fade-down"
           data-aos-duration="200"
-          className={`w-[215px] h-[119px] rounded-[5px] bg-[#FFFFFF] px-[16px] py-[13px] absolute top-[45.5%] ${mdTop} ${mdRight} z-50`}
+          className={`w-[215px] h-[119px] rounded-[5px] bg-[#FFFFFF] px-[16px] py-[13px] absolute top-[47%] ${mdTop} ${mdRight} z-50`}
           
         >
           <Link to="/individual_waitlist">
             <div
               onClick={toggleDropdown}
-              className="individual py-[10px] pl-[21px] rounded-[5px] border-[1px] border-[#F9BC60] cursor-pointer hover:bg-[#F9BC60]"
+              className="individual py-[10px] pl-[21px] rounded-[5px] border-[1px] border-[#F9BC60] cursor-pointer hover:bg-[#F9BC60] text-left"
             >
               Individual
             </div>
@@ -32,7 +32,7 @@ const WaitlistDropdown = ({toggleDropdown, mdTop, mdRight }) => {
           <Link to="/business_waitlist">
             <div
               onClick={toggleDropdown}
-              className="business py-[10px] pl-[21px] rounded-[5px] border-[1px] border-[#F9BC60] mt-[6px] cursor-pointer hover:bg-[#F9BC60]"
+              className="business py-[10px] pl-[21px] rounded-[5px] border-[1px] border-[#F9BC60] mt-[6px] cursor-pointer hover:bg-[#F9BC60] text-left"
             >
               Business
             </div>
