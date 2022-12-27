@@ -18,7 +18,7 @@ const BusinessWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
   const [bikeNumber, setBikeNumber] = useState("");
   const [location, setLocation] = useState("");
   const [showSuccessfulModal, setShowSuccessfulModal] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [sectorDropdown, setSectorDropdown] = useState(false);
 

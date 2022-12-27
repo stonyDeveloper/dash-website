@@ -24,7 +24,7 @@ const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
   const [emailAddress, setEmailAddress] = useState("");
   const [stateOfResidence, setStateOfResidence] = useState("");
   const [showSuccessfulModal, setShowSuccessfulModal] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [genderDropdown, setGenderDropdown] = useState(false);
 

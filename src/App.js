@@ -275,7 +275,7 @@ function App() {
                     )}
                   </button>
                   {footerDropdown && (
-                    <div className="absolute top-[53%] left-[24%]">
+                    <div className="absolute top-[53%] left-[22.5%]">
                       <WaitlistDropdown toggleDropdown={toggleFooterDropdown} />
                     </div>
                   )}
