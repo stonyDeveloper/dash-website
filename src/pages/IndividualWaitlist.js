@@ -144,7 +144,7 @@ const IndividualWaitlist = ({setShowDropdown, setFooterDropdown}) => {
               required
             />
             <select
-              className="select py-[14px] px-[16px] rounded-[10px] text-[#001E1D] font-[500] text-[16px] leading-[20px] md:w-[80%]"
+              className="select py-[14px] px-[16px] rounded-[10px] text-[#001E1D] min-h-[50px] font-[500] text-[16px] leading-[20px] md:w-[80%]"
               name="gender"
               id="gender"
               value={gender}
