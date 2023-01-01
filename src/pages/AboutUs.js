@@ -10,13 +10,13 @@ import TwitterIcon from "../assets/twitterIcon.png";
 
 const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown, toggleFooterDropdown, setFooterDropdown }) => {
   const closeNavDropdown = () => {
-    if (showDropdown == true){
+    if (showDropdown === true){
       setShowDropdown(false)
     }
   }
 
   const closeFooterDropdown = () => {
-    if (footerDropdown == true){
+    if (footerDropdown === true){
       setFooterDropdown(false)
     }
   }

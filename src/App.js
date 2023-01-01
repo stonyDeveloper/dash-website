@@ -12,13 +12,7 @@ import TwitterIcon from "./assets/twitterIcon.png";
 import BikeRider from "./assets/bikeRider1.png";
 import WaitlistDropdown from "./components/WaitlistDropdown";
 import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import IndividualWaitlist from "./pages/IndividualWaitlist";
 import BusinessWaitlist from "./pages/BusinessWaitlist";
 import AOS from "aos";
@@ -38,21 +32,21 @@ function App() {
   };
 
   const closeHeroDropDown = () => {
-    if(showDropdown == true){
-      setShowDropdown(false)
+    if (showDropdown === true) {
+      setShowDropdown(false);
     }
-  }
+  };
 
   const closeFooterDropdown = () => {
-    if(footerDropdown == true){
-      setFooterDropdown(false)
+    if (footerDropdown === true) {
+      setFooterDropdown(false);
     }
-  }
+  };
 
   const closeDropdowns = () => {
-    closeHeroDropDown()
-    closeFooterDropdown()
-  }
+    closeHeroDropDown();
+    closeFooterDropdown();
+  };
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
@@ -64,33 +58,40 @@ function App() {
         <Route
           path="/"
           element={
-            <div onClick={closeDropdowns} className="App bg-[url('./assets/background-img.png')] bg-auto  pt-[19px]">
+            <div
+              onClick={closeDropdowns}
+              className="App bg-[url('./assets/background-img.png')] bg-auto  pt-[19px]"
+            >
               <div className="flex items-center pr-[20px] md:flex md:items-center justify-between md:pr-[30px]">
                 <div className="rectangle bg-[#FFFFFF] md:w-1/6 flex justify-center items-center py-[7px] h-[48px] w-[120px] md:h-[75px] rounded-r-full md:max-w-[217px]">
                   <img className="w-[60%]" src={DashLogo} alt="logo" />
                 </div>
                 <div className="flex items-center gap-[46px]">
-                <Link
-                onClick={() => {
-                  setShowDropdown(false)
-                  setFooterDropdown(false)
-                }}
-                 className="font-[500] text-[18px] leading-[22.68px] text-[#ABD1C6]" to="/about_us">
-                About Us</Link>
-                <button
-                  className="hidden md:block bg-[#F9BC60]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
-                  onClick={toggleDropdown}
-                >
-                  <span className="mr-[16px] cursor-pointer">
-                    Join the waitlist
-                  </span>
-                  {!showDropdown && (
-                    <i class="fa fa-angle-down animate-fade"></i>
-                  )}
-                  {showDropdown && <i class="fa fa-angle-up animate-fade"></i>}
-                </button>
+                  <Link
+                    onClick={() => {
+                      setShowDropdown(false);
+                      setFooterDropdown(false);
+                    }}
+                    className="font-[500] text-[18px] leading-[22.68px] text-[#ABD1C6]"
+                    to="/about_us"
+                  >
+                    About Us
+                  </Link>
+                  <button
+                    className="hidden md:block bg-[#F9BC60]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
+                    onClick={toggleDropdown}
+                  >
+                    <span className="mr-[16px] cursor-pointer">
+                      Join the waitlist
+                    </span>
+                    {!showDropdown && (
+                      <i class="fa fa-angle-down animate-fade"></i>
+                    )}
+                    {showDropdown && (
+                      <i class="fa fa-angle-up animate-fade"></i>
+                    )}
+                  </button>
                 </div>
-                
               </div>
 
               <div className="hero flex flex-col justify-between items-center md:grid md:grid-cols-[1.5fr_1fr] md:px-[49px] md:gap-[30px] relative mt-[50px]">
@@ -119,7 +120,11 @@ function App() {
                 </div>
 
                 {showDropdown && (
-                  <WaitlistDropdown toggleDropdown={toggleDropdown} mdTop="md:top-[-50px]" mdRight="md:right-[26px]" />
+                  <WaitlistDropdown
+                    toggleDropdown={toggleDropdown}
+                    mdTop="md:top-[-50px]"
+                    mdRight="md:right-[26px]"
+                  />
                 )}
 
                 <div className="hero-img mt-[30px] w-full">
@@ -169,7 +174,16 @@ function App() {
                         Tracking
                       </h3>
                       <p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
-                      We handle and track every delivery from individuals and businesses to their various destinations. No matter the size, we ensure that our customers can get the maximum customer satisfaction at a better, cheaper and cost effective price. We have factored in a way to ensure that customers goods are safe and don’t need to constantly call dispatch riders, they can simply track real time and view an estimated time of delivery to the drop-off location of choosing. Our customers convenience matters to us.
+                        We handle and track every delivery from individuals and
+                        businesses to their various destinations. No matter the
+                        size, we ensure that our customers can get the maximum
+                        customer satisfaction at a better, cheaper and cost
+                        effective price. We have factored in a way to ensure
+                        that customers goods are safe and don’t need to
+                        constantly call dispatch riders, they can simply track
+                        real time and view an estimated time of delivery to the
+                        drop-off location of choosing. Our customers convenience
+                        matters to us.
                       </p>
                     </div>
                     <div
@@ -177,18 +191,29 @@ function App() {
             md:text-left max-w-[325px] mx-auto lg:max-w-[100%]"
                     >
                       <h3 className="font-[600] text-[24px] leading-[30.24px]">
-                      Our APIs
+                        Our APIs
                       </h3>
                       <p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
-                      Our Integratable APIs allow already existing delivery apps and logistics businesses to integrate with our product and get more and better order fulfillment. This is to ensure there is visibility across board in terms of reconciliation at the end of day and give competitive pricing, hence, More orders and ROI.
+                        Our Integratable APIs allow already existing delivery
+                        apps and logistics businesses to integrate with our
+                        product and get more and better order fulfillment. This
+                        is to ensure there is visibility across board in terms
+                        of reconciliation at the end of day and give competitive
+                        pricing, hence, More orders and ROI.
                       </p>
                     </div>
                     <div className="text-center mt-[30px] md:text-left max-w-[325px] mx-auto lg:max-w-[100%]">
                       <h3 className="font-[600] text-[24px] leading-[30.24px]">
-                      Security
+                        Security
                       </h3>
                       <p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
-                      With Daash, you can be rest assured that your goods and orders are secured and there is no need to panic about who is paying. You can simply choose if the sender is paying or the recipient is paying. Our product allows you to feel safe and secured not just in terms of goods sent but also in terms of payment and the satisfaction that all orders are delivered same day.
+                        With Daash, you can be rest assured that your goods and
+                        orders are secured and there is no need to panic about
+                        who is paying. You can simply choose if the sender is
+                        paying or the recipient is paying. Our product allows
+                        you to feel safe and secured not just in terms of goods
+                        sent but also in terms of payment and the satisfaction
+                        that all orders are delivered same day.
                       </p>
                     </div>
                   </div>
@@ -256,66 +281,90 @@ function App() {
               </div>
 
               <div className="footer">
-        <div className="footer-box text-center md:text-left w-[319px] h-[250px] md:w-[700px] lg:w-[886px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between mt-[-130px] md:pl-[68.5px] md:pr-[50.5px]">
-          <h1 className="font-[600] text-[32px] text-[#001E1D]">
-            Built Just For You. <br /> Join The Team
-          </h1>
-          <div className="relative">
-            <button
-              className="bg-[#F9BC60] mt-[25px]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
-              onClick={toggleFooterDropdown}
-            >
-              <span className="mr-[16px] cursor-pointer">
-                Join the waitlist
-              </span>
-              {!footerDropdown && <i class="fa fa-angle-down animate-fade"></i>}
-              {footerDropdown && <i class="fa fa-angle-up animate-fade"></i>}
-            </button>
-            {footerDropdown && (
-              <div className="absolute top-[105%] left-[0]">
-                <WaitlistDropdown toggleDropdown={toggleFooterDropdown} />
+                <div className="footer-box text-center md:text-left w-[319px] h-[250px] md:w-[700px] lg:w-[886px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between mt-[-130px] md:pl-[68.5px] md:pr-[50.5px]">
+                  <h1 className="font-[600] text-[32px] text-[#001E1D]">
+                    Built Just For You. <br /> Join The Team
+                  </h1>
+                  <div className="relative">
+                    <button
+                      className="bg-[#F9BC60] mt-[25px]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
+                      onClick={toggleFooterDropdown}
+                    >
+                      <span className="mr-[16px] cursor-pointer">
+                        Join the waitlist
+                      </span>
+                      {!footerDropdown && (
+                        <i class="fa fa-angle-down animate-fade"></i>
+                      )}
+                      {footerDropdown && (
+                        <i class="fa fa-angle-up animate-fade"></i>
+                      )}
+                    </button>
+                    {footerDropdown && (
+                      <div className="absolute top-[105%] left-[0]">
+                        <WaitlistDropdown
+                          toggleDropdown={toggleFooterDropdown}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="footer-links flex pt-[53px] justify-center gap-[55px] pb-[65px]">
+                  <div className="flex flex-col gap-[16px]">
+                    <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
+                      Company
+                    </p>
+                    <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
+                      About us
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-[16px]">
+                    <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
+                      Connect with us
+                    </p>
+                    <div className="flex gap-[10px]">
+                      <img src={InstagramIcon} alt="instagramIcon" />
+                      <img src={TwitterIcon} alt="twitterIcon" />
+                    </div>
+                  </div>
+                </div>
               </div>
-            )}
-          </div>
-        </div>
-
-        <div className="footer-links flex pt-[53px] justify-center gap-[55px] pb-[65px]">
-          <div className="flex flex-col gap-[16px]">
-            <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
-              Company
-            </p>
-            <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
-              About us
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-[16px]">
-            <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
-              Connect with us
-            </p>
-            <div className="flex gap-[10px]">
-              <img src={InstagramIcon} alt="instagramIcon" />
-              <img src={TwitterIcon} alt="twitterIcon" />
-            </div>
-          </div>
-        </div>
-      </div>
             </div>
           }
         />
-        <Route path="/individual_waitlist" element={<IndividualWaitlist setFooterDropdown={setFooterDropdown} setShowDropdown={setShowDropdown} />} />
-        <Route path="/business_waitlist" element={<BusinessWaitlist  setFooterDropdown={setFooterDropdown} setShowDropdown={setShowDropdown}/>} />
-        <Route 
-        path="/about_us" 
-        element={
-        <AboutUs 
-          showDropdown={showDropdown} 
-          setShowDropdown={setShowDropdown}
-          toggleDropdown={toggleDropdown}
-          footerDropdown={footerDropdown}
-          setFooterDropdown={setFooterDropdown}
-          toggleFooterDropdown={toggleFooterDropdown}
-        />} />
+        <Route
+          path="/individual_waitlist"
+          element={
+            <IndividualWaitlist
+              setFooterDropdown={setFooterDropdown}
+              setShowDropdown={setShowDropdown}
+            />
+          }
+        />
+        <Route
+          path="/business_waitlist"
+          element={
+            <BusinessWaitlist
+              setFooterDropdown={setFooterDropdown}
+              setShowDropdown={setShowDropdown}
+            />
+          }
+        />
+        <Route
+          path="/about_us"
+          element={
+            <AboutUs
+              showDropdown={showDropdown}
+              setShowDropdown={setShowDropdown}
+              toggleDropdown={toggleDropdown}
+              footerDropdown={footerDropdown}
+              setFooterDropdown={setFooterDropdown}
+              toggleFooterDropdown={toggleFooterDropdown}
+            />
+          }
+        />
       </Routes>
     </Router>
   );
