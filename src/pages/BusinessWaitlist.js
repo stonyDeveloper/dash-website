@@ -2,7 +2,6 @@ import React from "react";
 import DashLogo from "../assets/Full-logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import Bike from "../assets/bike-final.png";
-import Select from "react-select";
 import { useState, useEffect } from "react";
 import SubmissionSuccessful from "../components/SubmissionSuccessful";
 import axios from "axios";
@@ -46,8 +45,8 @@ const BusinessWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
   const addToWaitlist = async (businessInfo) => {
     setLoading(true);
     setShowSuccessfulModal(false);
-    const res = await axios.post(
-      `https://sheet.best/api/sheets/4cc1881e-cbc1-4950-84ab-db8b32d712f7`,
+    await axios.post(
+      `https://api.apispreadsheets.com/data/zpuHy9NspsZGJ7QG/`,
       businessInfo
     );
     // console.log(res)
@@ -188,7 +187,7 @@ const BusinessWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
               <div
                 onClick={toggleSectorDropdown}
                 className={`w-full  py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] bg-white ${
-                  businessSector == "Sector" ? "text-[#9BA3AF]" : "text-black"
+                  businessSector === "Sector" ? "text-[#9BA3AF]" : "text-black"
                 } flex items-center justify-between`}
               >
                 <p>{businessSector}</p>

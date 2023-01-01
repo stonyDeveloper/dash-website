@@ -152,12 +152,12 @@ function App() {
                 <div className="features-image-and-text lg:grid lg:grid-cols-[1.5fr_1fr] lg:items-center]">
                   <div className="features-image">
                     <img
-                      className=" hidden lg:block mx-auto mr-[-50px] lg:w-[300em] lg:mr-[-100px] lg:h-auto"
+                      className=" hidden lg:hidden mx-auto mr-[-50px] lg:w-[300em] lg:mr-[-100px] lg:h-auto"
                       src={FineYellowGirl}
                       alt="a-girl"
                     />
                     <img
-                      className="lg:hidden mt-[2px] mx-auto w-[70%]"
+                      className="mt-[170px] mx-auto w-[70%]"
                       src={FineYellowGirl2}
                       alt="fineyellowgirl"
                     />
@@ -255,53 +255,51 @@ function App() {
                 </div>
               </div>
 
-              <div className="footer relative">
-                <div className="footer-box w-[319px] h-[250px]   bg-[#ABD1C6] rounded-[10px] flex flex-col justify-center items-center py-[48px] px-[35px] text-center m-auto mt-[-29%]">
-                  <h4 className="font-[600] text-[32px] text">
-                    Built just for you. Join the team
-                  </h4>
-                  <button
-                    className="mt-[36px] bg-[#F9BC60]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
-                    onClick={toggleFooterDropdown}
-                  >
-                    <span className="mr-[16px] cursor-pointer">
-                      Join the waitlist
-                    </span>
-                    {!footerDropdown && (
-                      <i class="fa fa-angle-down animate-fade"></i>
-                    )}
-                    {footerDropdown && (
-                      <i class="fa fa-angle-up animate-fade"></i>
-                    )}
-                  </button>
-                  {footerDropdown && (
-                    <div className="absolute top-[53%] left-[21.3%]">
-                      <WaitlistDropdown toggleDropdown={toggleFooterDropdown} />
-                    </div>
-                  )}
-                </div>
-
-                <div className="footer-links flex pt-[53px] justify-center gap-[55px] pb-[65px]">
-                  <div className="flex flex-col gap-[16px]">
-                    <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
-                      Company
-                    </p>
-                    <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
-                      About us
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col gap-[16px]">
-                    <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
-                      Connect with us
-                    </p>
-                    <div className="flex gap-[10px]">
-                      <img src={InstagramIcon} alt="instagramIcon" />
-                      <img src={TwitterIcon} alt="twitterIcon" />
-                    </div>
-                  </div>
-                </div>
+              <div className="footer">
+        <div className="footer-box text-center md:text-left w-[319px] h-[250px] md:w-[700px] lg:w-[886px]   bg-[#ABD1C6] rounded-[10px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between mt-[-130px] md:pl-[68.5px] md:pr-[50.5px]">
+          <h1 className="font-[600] text-[32px] text-[#001E1D]">
+            Built Just For You. <br /> Join The Team
+          </h1>
+          <div className="relative">
+            <button
+              className="bg-[#F9BC60] mt-[25px]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
+              onClick={toggleFooterDropdown}
+            >
+              <span className="mr-[16px] cursor-pointer">
+                Join the waitlist
+              </span>
+              {!footerDropdown && <i class="fa fa-angle-down animate-fade"></i>}
+              {footerDropdown && <i class="fa fa-angle-up animate-fade"></i>}
+            </button>
+            {footerDropdown && (
+              <div className="absolute top-[105%] left-[0]">
+                <WaitlistDropdown toggleDropdown={toggleFooterDropdown} />
               </div>
+            )}
+          </div>
+        </div>
+
+        <div className="footer-links flex pt-[53px] justify-center gap-[55px] pb-[65px]">
+          <div className="flex flex-col gap-[16px]">
+            <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
+              Company
+            </p>
+            <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
+              About us
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-[16px]">
+            <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
+              Connect with us
+            </p>
+            <div className="flex gap-[10px]">
+              <img src={InstagramIcon} alt="instagramIcon" />
+              <img src={TwitterIcon} alt="twitterIcon" />
+            </div>
+          </div>
+        </div>
+      </div>
             </div>
           }
         />

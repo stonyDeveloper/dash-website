@@ -2,21 +2,19 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DashLogo from "../assets/Full-logo.png";
 import FineBoy from "../assets/fineboy1.png";
-import Select from "react-select";
 import { useState } from "react";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SubmissionSuccessful from "../components/SubmissionSuccessful";
 import Loader from "../components/Loader";
-import { Route, redirect } from "react-router-dom";
 import InputFieldDropdown from "../components/InputFieldDropdown";
 
 const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
-  const genders = [
-    { value: "male", label: "Male" },
-    { value: "female", label: "Female" },
-  ];
+  // const genders = [
+  //   { value: "male", label: "Male" },
+  //   { value: "female", label: "Female" },
+  // ];
 
   const [fullName, setFullName] = useState("");
   const [gender, setGender] = useState("Gender");
@@ -52,8 +50,8 @@ const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
   const addToWaitlist = async (userinfo) => {
     setLoading(true);
     setShowSuccessfulModal(false);
-    const res = await axios.post(
-      `https://sheet.best/api/sheets/f86a73c5-605b-478b-9810-4b9e67a4a835`,
+    await axios.post(
+      `https://api.apispreadsheets.com/data/tStBtA86QoyJzTG6/`,
       userinfo
     );
     // console.log(res)
@@ -171,7 +169,7 @@ const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
             <div className="relative md:w-[80%] w-full">
               <div
                 onClick={toggleGenderDropdown}
-                className={`w-full  py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] bg-white ${gender == "Gender" ? "text-[#9BA3AF]" : "text-black" } flex items-center justify-between`}
+                className={`w-full  py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] bg-white ${gender === "Gender" ? "text-[#9BA3AF]" : "text-black" } flex items-center justify-between`}
               >
                 <p>{gender}</p>
                 <i class="fa fa-angle-down"></i>
