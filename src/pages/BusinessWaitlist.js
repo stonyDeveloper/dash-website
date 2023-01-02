@@ -126,7 +126,7 @@ const BusinessWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
       </div>
 
       <div className="lg:grid lg:grid-cols-2 place-items-center mt-[30px] lg:mt-[-20px]">
-        <img src={Bike} alt="bike" className="mx-auto mt-[100px] w-[70%] lg:w-[60%]" />
+        <img src={Bike} alt="bike" className="mx-auto  lg:mt-[100px] w-[70%] lg:w-[60%]" />
 
         <div className="container px-[20px] md:px-[70px] lg:px-[0]  mt-[7px] m-auto">
           <h1 className="text-white font-[500] text-[32px] leading-[35.2px] md:text-center lg:text-left lg:text-[3rem] lg:leading-[70.4px]">
