@@ -183,7 +183,7 @@ const IndividualWaitlist = ({ setShowDropdown, setFooterDropdown }) => {
 
             <input
               className="w-full py-[16px] px-[19px] rounded-[10px] font-[500] text-[16px] leading-[20px] md:w-[80%]"
-              type="number"
+              type="text"
               placeholder="Phone No"
               id="phoneNumber"
               value={phoneNumber}
