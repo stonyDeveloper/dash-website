@@ -79,7 +79,7 @@ function App() {
                     >
                       About Us
                     </Link>
-                    <div className="relative">
+                    <div className="relative hidden md:block">
                     
                     <button
                       className="hidden md:block bg-[#F9BC60]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"

@@ -42,6 +42,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
               Home
             </p>
           </Link>
+          <div className="relative hidden md:block">
           <button
             className="hidden md:block bg-[#F9BC60]  py-[15px] px-[22px] rounded-[10px] text-[20px] font-[500] hover:bg-[#ac8a58]"
             onClick={toggleDropdown}
@@ -50,15 +51,17 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
             {!showDropdown && <i class="fa fa-angle-down animate-fade"></i>}
             {showDropdown && <i class="fa fa-angle-up animate-fade"></i>}
           </button>
-        </div>
-        <div className="top-[700px] hidden md:block">
+          <div className="top-[700px] hidden md:block">
           {showDropdown && (
             <WaitlistDropdown
-              mdTop="md:top-[100px]"
-              mdRight="md:right-[24px]"
+              mdTop="md:top-[64px]"
+              mdRight="md:left-[0px]"
               toggleDropdown={toggleDropdown}
             />
           )}
+        </div>
+        </div>
+        
         </div>
 
         <div className="md:flex md:justify-between px-[50px] md:items-center mt-[60px]">
