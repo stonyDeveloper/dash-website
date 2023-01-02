@@ -55,7 +55,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
           {showDropdown && (
             <WaitlistDropdown
               mdTop="md:top-[100px]"
-              mdRight="md:right-[50px]"
+              mdRight="md:right-[24px]"
               toggleDropdown={toggleDropdown}
             />
           )}
@@ -159,9 +159,13 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
             <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
               Company
             </p>
+            <Link
+              to="/about_us"
+              >
             <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
               About us
             </p>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-[16px]">

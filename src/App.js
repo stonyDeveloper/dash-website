@@ -18,6 +18,8 @@ import BusinessWaitlist from "./pages/BusinessWaitlist";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import AboutUs from "./pages/AboutUs";
+import ScrollToTop from "./components/scrollToTop"
+
 
 function App() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -54,6 +56,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop>
       <Routes>
         <Route
           path="/"
@@ -162,7 +165,7 @@ function App() {
                       alt="a-girl"
                     />
                     <img
-                      className="mt-[170px] mx-auto w-[70%]"
+                      className="mt-[30px] lg:mt-[170px] mx-auto w-[70%]"
                       src={FineYellowGirl2}
                       alt="fineyellowgirl"
                     />
@@ -315,9 +318,13 @@ function App() {
                     <p className="font-[500] text-[16px] leading-[20.16px] text-[#FFFFFE]">
                       Company
                     </p>
+                    <Link
+                    to="/about_us"
+                    >
                     <p className="font-[400] text-[16px] leading-[20.16px] text-[#ABD1C6]">
                       About us
                     </p>
+                    </Link>
                   </div>
 
                   <div className="flex flex-col gap-[16px]">
@@ -366,6 +373,7 @@ function App() {
           }
         />
       </Routes>
+      </ScrollToTop>
     </Router>
   );
 }
