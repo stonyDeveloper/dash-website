@@ -1,5 +1,6 @@
 {
-  "name": "dash-website",
+  "name": "daash-website",
+  "homepage": "https://daash.ng/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
