@@ -211,7 +211,7 @@ function App() {
                         alt="a-girl"
                       />
                       <img
-                        className="mt-[30px] lg:mt-[170px] mx-auto w-[70%]"
+                        className="mt-[30px] lg:mt-[120px] mx-auto w-[70%]"
                         src={FineYellowGirl2}
                         alt="fineyellowgirl"
                       />
