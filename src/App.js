@@ -19,9 +19,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import AboutUs from "./pages/AboutUs";
 import ScrollToTop from "./components/scrollToTop";
+import ReadButton from "./components/ReadButton";
 
 function App() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [readMore, setReadMore] = useState(false);
+  const [readLess1, setReadLess1] = useState(false);
+  const [readLess2, setReadLess2] = useState(false);
+  const [readLess3, setReadLess3] = useState(false);
   const toggleDropdown = () => {
     setShowDropdown((prevShowDropdown) => !prevShowDropdown);
     console.log("working from dropdown");
@@ -48,6 +53,28 @@ function App() {
     closeHeroDropDown();
     closeFooterDropdown();
   };
+
+  const lessText1 = () => {
+    setReadLess1(false)
+  }
+
+  const moreText1 = () => {
+    setReadLess1(true)
+  }
+  const lessText2 = () => {
+    setReadLess2(false)
+  }
+
+  const moreText2 = () => {
+    setReadLess2(true)
+  }
+  const lessText3 = () => {
+    setReadLess3(false)
+  }
+
+  const moreText3 = () => {
+    setReadLess3(true)
+  }
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
@@ -191,7 +218,7 @@ function App() {
                     </div>
 
                     <div className="features-text mt-[50px] md:ml-[-80px]">
-                      <div className="text-center md:text-left max-w-[325px] mx-auto lg:max-w-[100%]">
+                      {/* <div className="text-center md:text-left max-w-[325px] mx-auto lg:max-w-[100%] hidden md:block">
                         <h3 className="font-[600] text-[24px] leading-[30.24px]">
                           Tracking
                         </h3>
@@ -207,6 +234,39 @@ function App() {
                           the drop-off location of choosing. Our customers
                           convenience matters to us.
                         </p>
+                      </div> */}
+                      <div className="text-center md:text-left max-w-[325px] mx-auto lg:max-w-[100%]">
+                        <h3 className="font-[600] text-[24px] leading-[30.24px]">
+                          Tracking
+                        </h3>
+                        {readLess1 && (<p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
+                          We handle and track every delivery from individuals
+                          and businesses to their various destinations. No
+                          matter the size, we ensure that our customers can get
+                          the maximum customer satisfaction at a better, cheaper
+                          and cost effective price. We have factored in a way to
+                          ensure that customers goods are safe and don’t need to
+                          constantly call dispatch riders, they can simply track
+                          real time and view an estimated time of delivery to
+                          the drop-off location of choosing. Our customers
+                          convenience matters to us.
+                        </p>)}
+                        {!readLess1 && (<p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
+                          We handle and track every delivery from individuals
+                          and businesses to their various destinations. No
+                          matter the size, we ensure that our customers can get
+                          the maximum customer satisfaction at a better, cheaper
+                          and cost effective price...
+                        </p>)}
+                        {readLess1 && (<ReadButton
+                          text="Read Less"
+                          onClick={lessText1}
+                        />)}
+                        {!readLess1 && (<ReadButton
+                          text="Read More"
+                          onClick={moreText1}
+                        />)}
+                        
                       </div>
                       <div
                         className="text-center mt-[30px]
@@ -215,20 +275,33 @@ function App() {
                         <h3 className="font-[600] text-[24px] leading-[30.24px]">
                           Our APIs
                         </h3>
-                        <p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
+                        {readLess2 && (<p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
                           Our Integratable APIs allow already existing delivery
                           apps and logistics businesses to integrate with our
                           product and get more and better order fulfillment.
                           This is to ensure there is visibility across board in
                           terms of reconciliation at the end of day and give
                           competitive pricing, hence, More orders and ROI.
-                        </p>
+                        </p>)}
+                        {!readLess2 && (<p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
+                          Our Integratable APIs allow already existing delivery
+                          apps and logistics businesses to integrate with our
+                          product and get more and better order fulfillment...
+                        </p>)}
+                        {readLess2 && (<ReadButton
+                          text="Read Less"
+                          onClick={lessText2}
+                        />)}
+                        {!readLess2 && (<ReadButton
+                          text="Read More"
+                          onClick={moreText2}
+                        />)}
                       </div>
                       <div className="text-center mt-[30px] md:text-left max-w-[325px] mx-auto lg:max-w-[100%]">
                         <h3 className="font-[600] text-[24px] leading-[30.24px]">
                           Security
                         </h3>
-                        <p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
+                        {readLess3 && (<p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
                           With Daash, you can be rest assured that your goods
                           and orders are secured and there is no need to panic
                           about who is paying. You can simply choose if the
@@ -237,7 +310,21 @@ function App() {
                           in terms of goods sent but also in terms of payment
                           and the satisfaction that all orders are delivered
                           same day.
-                        </p>
+                        </p>)}
+                        {!readLess3 && (<p className="font-[400] text-[20px] leading-[25.2px] px-[4px] mt-[9px] lg:w-[520px] lg:text-[24px] lg:leading-[30.24px]">
+                          With Daash, you can be rest assured that your goods
+                          and orders are secured and there is no need to panic
+                          about who is paying. You can simply choose if the
+                          sender is paying or the recipient is paying...
+                        </p>)}
+                        {readLess3 && (<ReadButton
+                          text="Read Less"
+                          onClick={lessText3}
+                        />)}
+                        {!readLess3 && (<ReadButton
+                          text="Read More"
+                          onClick={moreText3}
+                        />)}
                       </div>
                     </div>
                   </div>
