@@ -81,7 +81,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    
       <ScrollToTop>
         <Routes>
           <Route
@@ -479,7 +479,6 @@ function App() {
           />
         </Routes>
       </ScrollToTop>
-    </Router>
   );
 }
 
