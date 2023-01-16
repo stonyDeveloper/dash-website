@@ -23,7 +23,7 @@ import ReadButton from "./components/ReadButton";
 
 function App() {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [readMore, setReadMore] = useState(false);
+  // const [readMore, setReadMore] = useState(false);
   const [readLess1, setReadLess1] = useState(false);
   const [readLess2, setReadLess2] = useState(false);
   const [readLess3, setReadLess3] = useState(false);
