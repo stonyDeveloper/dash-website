@@ -77,7 +77,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
         <img className="w-full" src={AboutImage} alt="packagedelivery" />
       </div>
       <div className="cards bg-white pt-[161px] hidden xl:flex px-[50px] gap-[22px]">
-        <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[450px]">
+        <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[500px]">
           <img className="w-[69px]" src={TextLogo} alt="" />
           <p className="font-[400] text-[24px]  leading-[33.6px] text-[#FFFFFE] mt-[22px]">
             Daash is an on-demand aggregator company that aggregates logistics
@@ -85,7 +85,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
             into a single platform where they can transact business.{" "}
           </p>
         </div>
-        <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[450px]">
+        <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[500px]">
           <img className="w-[69px]" src={TextLogo} alt="" />
           <p className="font-[400] text-[24px]  leading-[33.6px] text-[#FFFFFE] mt-[22px]">
             More specifically, Daash is a transportation logistics company and
@@ -94,7 +94,7 @@ const AboutUs = ({ showDropdown, toggleDropdown, setShowDropdown, footerDropdown
             and get paid. Independent contractors as drivers.{" "}
           </p>
         </div>
-        <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[450px]">
+        <div className="card bg-[#004643] w-fit pt-[47px] pr-[55px] pl-[30px] rounded-[10px] h-[500px]">
           <img className="w-[69px]" src={TextLogo} alt="" />
           <p className="font-[400] text-[24px] leading-[33.6px] text-[#FFFFFE] mt-[22px]">
             Daash aims to be one of the many services that will contribute to

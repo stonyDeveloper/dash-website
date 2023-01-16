@@ -12,7 +12,7 @@ import TwitterIcon from "./assets/twitterIcon.png";
 import BikeRider from "./assets/bikeRider1.png";
 import WaitlistDropdown from "./components/WaitlistDropdown";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import IndividualWaitlist from "./pages/IndividualWaitlist";
 import BusinessWaitlist from "./pages/BusinessWaitlist";
 import AOS from "aos";
